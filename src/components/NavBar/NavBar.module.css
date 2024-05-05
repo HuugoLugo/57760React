@@ -1,0 +1,27 @@
+.navigator {
+    position: absolute;
+    top: 0;
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4f000b;
+    color: #f9f7f3;
+}
+
+.categoriesCont {
+    width: 30%;
+}
+
+.categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.pageTitle {
+    font-size: 19px;
+    width: 40%;
+}

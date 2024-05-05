@@ -1,0 +1,8 @@
+.itemList {
+    position: absolute;
+    top: 120px;
+    height: 500px;
+    width: 100%;
+    background-color: #adc178;
+    color: #0a0908;
+}
