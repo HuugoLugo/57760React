@@ -1,0 +1,11 @@
+.countCont {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.count {
+    padding: 10px
+}

@@ -1,14 +1,18 @@
-import NavBar from './components/NavBar/NavBar'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
-import './App.css'
+import './App.css';
+import NavBar from './components/NavBar/NavBar';
+//import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import AppRouter from './Router/AppRouter';
+
 
 function App() {
   return (
     <>
       <NavBar />
-      <ItemListContainer messageItem ={"En construcción"}/>
+
+      <AppRouter />
     </>
   )
 }
 
+//<ItemDetailContainer id={4} Así si funciona>
 export default App;

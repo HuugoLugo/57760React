@@ -1,10 +1,45 @@
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import styles from './ItemListContainer.module.css';
-/*Aquí aparece que messageItem is missing in props validation, 
-pero en pantalla al inspeccionar no aparece ningún problema, y si funciona si cambio el texto, o el nombre a la propiedad */
-function ItemListContainer({ messageItem }) {
+import Loader from "../Loader/Loader";
+import ItemList from "../ItemList/ItemList";
+
+function ItemListContainer() {
+
+    const [products, setProducts] = useState([])
+    const { id } = useParams()
+
+    useEffect(() => {
+        const fetchData = async () => {
+
+            try {
+                if (!id) {
+                    const response = await fetch("./DataProducts/Products.json")
+                    const data = await response.json()
+                    console.log(data)
+                    setProducts(data)
+                } else {
+                    const filteredProducts = products.filter(product => product.category === id);
+                    console.log(filteredProducts)
+                    setProducts(filteredProducts);
+                }
+            }
+            catch (error) {
+                console.log("Error al obtener los productos", error)
+            }
+        }
+        fetchData()
+    }, [id])
+
     return (
-        <section className={styles.itemList}>
-            <h2>{messageItem}</h2>
+        <section className={styles.itemListCont}>
+
+            {products.length == 0 ?
+
+                <Loader />
+                :
+                <ItemList products={products} />
+            }
         </section>
     )
 }

@@ -1,0 +1,12 @@
+.countCont {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+    align-items: center;
+}
+
+.countTxt {
+    color: white;
+    font-weight: 900;
+}
